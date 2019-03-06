@@ -7,22 +7,30 @@ function getRandomColor() {
 }
 
 const cardList = {
-  1: { name: 'dragon', color: getRandomColor() },
-  2: { name: 'crow', color: getRandomColor() },
-  3: { name: 'feather', color: getRandomColor() },
-  4: { name: 'horse-head', color: getRandomColor() },
-  5: { name: 'kiwi-bird', color: getRandomColor() },
-  6: { name: 'paw', color: getRandomColor() },
-  7: { name: 'cat', color: getRandomColor() },
-  8: { name: 'horse', color: getRandomColor() },
-  9: { name: 'hippo', color: getRandomColor() },
-  10: { name: 'dog', color: getRandomColor() },
-  11: { name: 'dove', color: getRandomColor() },
-  12: { name: 'frog', color: getRandomColor() },
-  13: { name: 'spider', color: getRandomColor() },
-  14: { name: 'fish', color: getRandomColor() },
-  15: { name: 'egg', color: getRandomColor() },
-  16: { name: 'bone', color: getRandomColor() },
+  1: { name: 'dragon', color: getRandomColor(), isFliped: false },
+  2: { name: 'crow', color: getRandomColor(), isFliped: false },
+  3: { name: 'feather', color: getRandomColor(), isFliped: false },
+  4: { name: 'horse-head', color: getRandomColor(), isFliped: false },
+  5: { name: 'kiwi-bird', color: getRandomColor(), isFliped: false },
+  6: { name: 'paw', color: getRandomColor(), isFliped: false },
+  7: { name: 'cat', color: getRandomColor(), isFliped: false },
+  8: { name: 'horse', color: getRandomColor(), isFliped: false },
+  9: { name: 'hippo', color: getRandomColor(), isFliped: false },
+  10: { name: 'dog', color: getRandomColor(), isFliped: false },
+  11: { name: 'dove', color: getRandomColor(), isFliped: false },
+  12: { name: 'frog', color: getRandomColor(), isFliped: false },
+  13: { name: 'spider', color: getRandomColor(), isFliped: false },
+  14: { name: 'fish', color: getRandomColor(), isFliped: false },
+  15: { name: 'egg', color: getRandomColor(), isFliped: false },
+  16: { name: 'bone', color: getRandomColor(), isFliped: false },
 };
+
+// const store = {
+//   cards: {},
+// eslint-disable-next-line max-len
+//   players: { 1: { id: 1, name: 'Player 1', points: 0 }, 2: { id: 2, name: 'Player 2', points: 0 } },
+//   gameStatus: { isOver: false, winner: null, nextPlayer: 1 },
+
+// };
 
 export default cardList;

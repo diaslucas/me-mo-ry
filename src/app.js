@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.scss';
 import Navbar from './components/Navbar';
-import Main from './components/Main';
+import Main from './containers/Main';
 import Aside from './components/Aside';
 
 const App = () => (
