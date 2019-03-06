@@ -1,0 +1,59 @@
+@mixin card($color) {
+  color: $color;
+}
+
+.card-box {
+  float: left;
+}
+
+.cards {
+  float: left;
+  text-align: center;
+  width: 125px;
+  font-size: 5rem;
+  margin: 0.5rem;
+  border: 2px solid #545454;
+  border-radius: 8%;
+  padding: 0.4rem;
+}
+
+.cards:hover {
+  cursor: pointer;
+}
+
+.card-green {
+  @include card(#8bc53f)
+}
+
+.card-blue {
+  @include card(#18bad4);
+}
+
+.card-pink {
+  @include card(#f272ab);
+}
+
+.card-purple {
+  @include card(#a965ab);
+}
+
+.card-ocean {
+  @include card(#84c99d);
+}
+
+.card-red {
+  @include card(#c63e3e);
+}
+
+.card-yellow {
+  @include card(#cfb811);
+}
+
+.card-orange {
+  @include card(#fa9318);
+}
+
+.card-back {
+  @include card(#fff);
+  background: #17a2b8;
+}

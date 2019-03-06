@@ -20,6 +20,8 @@
     ],
     "rules": {
         "linebreak-style": ["error", "windows"],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/prop-types": [0],
+        "click-events-have-key-events": [0]
     }
 }
