@@ -2,7 +2,7 @@ import React from 'react';
 import './aside.scss';
 
 const Aside = () => (
-  <aside>
+  <aside className="score-section">
     <ul className="list-group">
       <li className="list-group-item d-flex justify-content-between align-items-center">
         {'Player 1'}

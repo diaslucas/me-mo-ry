@@ -1,8 +1,8 @@
 import { FLIP_CARD, SET_CURRENT_PLAYER, SET_LAST_CARD_FLIPPED } from '../constants';
 
-export const flipCard = (id, index) => ({
+export const flipCard = index => ({
   type: FLIP_CARD,
-  payload: { id, index },
+  payload: index,
 });
 
 export const setCurrentPlayer = id => ({

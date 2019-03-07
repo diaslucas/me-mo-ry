@@ -10,10 +10,9 @@ const Main = ({ cards }) => {
   const lastCardFlipped = state.game.lastCard;
 
   const handleClick = (card, index) => {
-    const { id, name, isFlipped } = card;
-
+    const { name, isFlipped } = card;
     if (!isFlipped) {
-      store.dispatch(flipCard(id, index));
+      store.dispatch(flipCard(index));
 
       if (lastCardFlipped.card === null) {
         store.dispatch(setLastCardFlipped(card, index));
@@ -22,8 +21,8 @@ const Main = ({ cards }) => {
           console.log('point');
         } else {
           setTimeout(() => {
-            store.dispatch(flipCard(id, index));
-            store.dispatch(flipCard(lastCardFlipped.card.id, lastCardFlipped.index));
+            store.dispatch(flipCard(index));
+            store.dispatch(flipCard(lastCardFlipped.index));
           }, 1000);
         }
         store.dispatch(setLastCardFlipped(null, null));
