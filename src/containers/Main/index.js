@@ -1,5 +1,4 @@
 import React from 'react';
-import { uid } from 'react-uid';
 import './main.scss';
 import Card from '../../components/Card';
 import store from '../../store';
@@ -10,24 +9,24 @@ const Main = ({ cards }) => {
   const state = store.getState();
   const lastCardFlipped = state.game.lastCard;
 
-  const handleClick = (card) => {
+  const handleClick = (card, index) => {
     const { id, name, isFlipped } = card;
 
     if (!isFlipped) {
-      store.dispatch(flipCard(id));
+      store.dispatch(flipCard(id, index));
 
-      if (lastCardFlipped === null) {
-        store.dispatch(setLastCardFlipped(card));
+      if (lastCardFlipped.card === null) {
+        store.dispatch(setLastCardFlipped(card, index));
       } else {
-        if (lastCardFlipped.name === name) {
+        if (lastCardFlipped.card.name === name) {
           console.log('point');
         } else {
           setTimeout(() => {
-            store.dispatch(flipCard(id));
-            store.dispatch(flipCard(lastCardFlipped.id));
+            store.dispatch(flipCard(id, index));
+            store.dispatch(flipCard(lastCardFlipped.card.id, lastCardFlipped.index));
           }, 1000);
         }
-        store.dispatch(setLastCardFlipped(null));
+        store.dispatch(setLastCardFlipped(null, null));
       }
     }
   };
@@ -39,8 +38,8 @@ const Main = ({ cards }) => {
           name={card.name}
           color={card.color}
           isFlipped={card.isFlipped}
-          onClick={() => handleClick(card)}
-          key={uid(card.name, index)}
+          onClick={() => handleClick(card, index)}
+          key={card.id}
         />
       ))}
     </main>
