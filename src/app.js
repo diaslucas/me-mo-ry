@@ -8,7 +8,7 @@ import store from './store';
 
 const App = () => {
   const state = store.getState();
-  const cards = _.values(state.cards);
+  const { cards } = state;
   return (
     <React.Fragment>
       <Navbar />
