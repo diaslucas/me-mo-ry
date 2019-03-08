@@ -4,13 +4,12 @@ import Card from '../../components/Card';
 import store from '../../store';
 import { flipCard, setLastCardFlipped } from '../../actions';
 
-
 const Main = ({ cards }) => {
-  const state = store.getState();
-  const lastCardFlipped = state.game.lastCard;
-
   const handleClick = (card, index) => {
+    const state = store.getState();
+    const lastCardFlipped = state.game.lastCard;
     const { name, isFlipped } = card;
+
     if (!isFlipped) {
       store.dispatch(flipCard(index));
 
@@ -25,6 +24,7 @@ const Main = ({ cards }) => {
             store.dispatch(flipCard(lastCardFlipped.index));
           }, 1000);
         }
+
         store.dispatch(setLastCardFlipped(null, null));
       }
     }

@@ -18,4 +18,11 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+function isEqual(prevProps, nextProps) {
+  if (prevProps.isFlipped === nextProps.isFlipped) {
+    return true;
+  }
+  return false;
+}
+
+export default React.memo(Card, isEqual);
