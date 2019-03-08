@@ -4,17 +4,13 @@ import cardList from '../cardList';
 export default (state = cardList, action) => {
   switch (action.type) {
     case FLIP_CARD: {
-      const { id, index } = action.payload;
-      const isFlipped = !state[index].isFlipped;
-      const newState = [
-        ...state.map((card) => {
-          if (card.id === id) {
-            return Object.assign({}, card, { isFlipped });
-          }
-          return card;
-        }),
+      const index = action.payload;
+      return [
+        ...state.slice(0, index),
+        { ...state[index], isFlipped: !state[index].isFlipped },
+        ...state.slice(index + 1),
       ];
-      return newState;
+
     }
 
     default:

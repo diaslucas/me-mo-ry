@@ -12,7 +12,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="container-fluid app-content">
+      <div className="app-content">
         <Aside />
         <Main cards={cards} />
       </div>

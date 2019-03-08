@@ -1,4 +1,6 @@
 .main {
-  flex: 1 1 0;
-  padding: 0 6rem;
+  flex-basis: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
