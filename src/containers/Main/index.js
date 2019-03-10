@@ -3,6 +3,7 @@ import './main.scss';
 import Card from '../../components/Card';
 import store from '../../store';
 import { flipCard, setLastCardFlipped } from '../../actions';
+import { unflipCards, changeCurrentPlayer } from '../../helpers';
 
 const Main = ({ cards }) => {
   const handleClick = (card, index) => {
@@ -20,8 +21,8 @@ const Main = ({ cards }) => {
           console.log('point');
         } else {
           setTimeout(() => {
-            store.dispatch(flipCard(index));
-            store.dispatch(flipCard(lastCardFlipped.index));
+            unflipCards(store, index, lastCardFlipped);
+            changeCurrentPlayer(store);
           }, 1000);
         }
 

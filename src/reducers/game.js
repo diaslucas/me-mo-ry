@@ -1,10 +1,11 @@
-import { SET_LAST_CARD_FLIPPED } from '../constants';
+import { SET_LAST_CARD_FLIPPED, SET_CURRENT_PLAYER } from '../constants';
 
 const initialState = {
   isOver: false,
   winner: null,
   currentPlayer: 1,
   lastCard: { card: null, index: null },
+  totalPlayers: 2,
 };
 
 export default (state = initialState, action) => {
@@ -14,6 +15,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         lastCard: { card, index },
+      };
+    }
+
+    case SET_CURRENT_PLAYER: {
+      return {
+        ...state,
+        currentPlayer: action.payload,
       };
     }
 
