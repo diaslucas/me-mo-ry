@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing reducers Cards Reducer Initial state match snapshot 1`] = `[Function]`;
+exports[`Testing Reducers Cards Reducer should return the initial state 1`] = `[Function]`;
 
-exports[`Testing reducers Game Reducer Initial state match snapshot 1`] = `[Function]`;
+exports[`Testing Reducers Game Reducer should return the initial state 1`] = `[Function]`;
 
-exports[`Testing reducers Players Reducer Initial state match snapshot 1`] = `[Function]`;
+exports[`Testing Reducers Players Reducer should return the initial state 1`] = `[Function]`;

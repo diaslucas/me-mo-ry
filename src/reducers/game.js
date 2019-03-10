@@ -5,7 +5,6 @@ const initialState = {
   winner: null,
   currentPlayer: 1,
   lastCardFlipped: { card: null, index: null },
-  totalPlayers: 2,
 };
 
 export default (state = initialState, action) => {

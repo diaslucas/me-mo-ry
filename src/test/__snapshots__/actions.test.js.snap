@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Actions Cards Actions should handle flipCard 1`] = `
+Object {
+  "payload": 1,
+  "type": "FLIP_CARD",
+}
+`;
+
+exports[`Testing Actions Game Actions should handle setCurrentPlayer 1`] = `
+Object {
+  "payload": 1,
+  "type": "SET_CURRENT_PLAYER",
+}
+`;
+
+exports[`Testing Actions Game Actions should handle setLastCardFlipped 1`] = `
+Object {
+  "payload": Object {
+    "card": Object {
+      "color": "pink",
+      "id": 30,
+      "isFlipped": false,
+      "name": "fish",
+    },
+    "index": 2,
+  },
+  "type": "SET_LAST_CARD_FLIPPED",
+}
+`;
+
+exports[`Testing Actions Players Actions should handle addPoint 1`] = `
+Object {
+  "payload": 1,
+  "type": "ADD_POINT",
+}
+`;
+
+exports[`Testing Actions Players Actions should handle setPlayerName 1`] = `
+Object {
+  "payload": Object {
+    "name": "Lucas",
+    "playerId": 1,
+  },
+  "type": "SET_PLAYER_NAME",
+}
+`;
