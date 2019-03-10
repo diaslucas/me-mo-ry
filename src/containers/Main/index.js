@@ -2,13 +2,14 @@ import React from 'react';
 import './main.scss';
 import Card from '../../components/Card';
 import store from '../../store';
-import { flipCard, setLastCardFlipped } from '../../actions';
+import { flipCard, setLastCardFlipped, addPoint } from '../../actions';
 import { unflipCards, changeCurrentPlayer } from '../../helpers';
 
 const Main = ({ cards }) => {
   const handleClick = (card, index) => {
     const state = store.getState();
-    const lastCardFlipped = state.game.lastCard;
+    const { game } = state;
+    const { currentPlayer, lastCardFlipped } = game;
     const { name, isFlipped } = card;
 
     if (!isFlipped) {
@@ -18,7 +19,7 @@ const Main = ({ cards }) => {
         store.dispatch(setLastCardFlipped(card, index));
       } else {
         if (lastCardFlipped.card.name === name) {
-          console.log('point');
+          store.dispatch(addPoint(currentPlayer));
         } else {
           setTimeout(() => {
             unflipCards(store, index, lastCardFlipped);

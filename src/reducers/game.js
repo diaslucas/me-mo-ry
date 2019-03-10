@@ -4,7 +4,7 @@ const initialState = {
   isOver: false,
   winner: null,
   currentPlayer: 1,
-  lastCard: { card: null, index: null },
+  lastCardFlipped: { card: null, index: null },
   totalPlayers: 2,
 };
 
@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
       const { card, index } = action.payload;
       return {
         ...state,
-        lastCard: { card, index },
+        lastCardFlipped: { card, index },
       };
     }
 
