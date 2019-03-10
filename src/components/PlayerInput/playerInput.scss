@@ -1,0 +1,11 @@
+.input-player {
+  width: 75%;
+  border: 0;
+  background: transparent;
+}
+
+.input-player:focus {
+  background: #fff;
+  color: #000 !important;
+  font-weight: normal !important;
+}

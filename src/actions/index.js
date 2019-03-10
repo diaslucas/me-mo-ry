@@ -1,4 +1,4 @@
-import { FLIP_CARD, SET_CURRENT_PLAYER, SET_LAST_CARD_FLIPPED, ADD_POINT } from '../constants';
+import { FLIP_CARD, SET_CURRENT_PLAYER, SET_LAST_CARD_FLIPPED, ADD_POINT, SET_PLAYER_NAME } from '../constants';
 
 export const flipCard = index => ({
   type: FLIP_CARD,
@@ -18,4 +18,10 @@ export const setLastCardFlipped = (card, index) => ({
 export const addPoint = playerId => ({
   type: ADD_POINT,
   payload: playerId,
+});
+
+
+export const setPlayerName = (playerId, name) => ({
+  type: SET_PLAYER_NAME,
+  payload: { playerId, name },
 });
