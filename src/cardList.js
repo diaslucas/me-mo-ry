@@ -34,5 +34,5 @@ const copies = originalCards.map(card => (
 const cardList = [...originalCards, ...copies];
 const shuffledCardList = _.shuffle(cardList);
 
-
+export const numberOfPairs = originalCards.length;
 export default shuffledCardList;
