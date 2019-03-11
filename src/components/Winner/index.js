@@ -1,9 +1,14 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import { Animated } from 'react-animated-css';
 import './winner.scss';
 
 const Winner = (props) => {
   const { player, visible } = props;
+  const audio = new Audio('src/tada.wav');
+  if (visible) {
+    audio.play();
+  }
   return (
     <div className={visible ? 'visible' : 'invisible'}>
       <Animated className="winner" animationIn="tada" animationOut="slideOutRight" isVisible={visible}>
