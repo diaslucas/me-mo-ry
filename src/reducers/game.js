@@ -1,9 +1,10 @@
-import { SET_LAST_CARD_FLIPPED, SET_CURRENT_PLAYER } from '../constants';
+import { SET_LAST_CARD_FLIPPED, SET_CURRENT_PLAYER, ADD_POINT } from '../constants';
+import { numberOfPairs } from '../cardList';
 
 const initialState = {
   isOver: false,
-  winner: null,
   currentPlayer: 1,
+  cardsGuessed: 0,
   lastCardFlipped: { card: null, index: null },
 };
 
@@ -21,6 +22,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         currentPlayer: action.payload,
+      };
+    }
+
+    case ADD_POINT: {
+      const cardsGuessed = state.cardsGuessed + 1;
+      const isOver = cardsGuessed === numberOfPairs;
+      return {
+        ...state,
+        isOver,
+        cardsGuessed,
       };
     }
 

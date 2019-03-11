@@ -30,3 +30,18 @@ export function changeCurrentPlayer(store) {
   const nextPlayer = getNextPlayer();
   store.dispatch(setCurrentPlayer(nextPlayer));
 }
+
+export function getWinner(players) {
+  const playerPoints = _.values(players);
+  let winner = null;
+  let winnerPoints = 0;
+  playerPoints.forEach((player) => {
+    if (player.points > winnerPoints) {
+      winner = player;
+      winnerPoints = player.points;
+    } else if (player.points === winnerPoints) {
+      winner = null;
+    }
+  });
+  return winner;
+}

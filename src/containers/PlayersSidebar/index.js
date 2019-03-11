@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Animated } from 'react-animated-css';
 import './playersSidebar.scss';
 import PlayerInput from '../../components/PlayerInput';
 import store from '../../store';
@@ -38,12 +37,6 @@ const PlayersSidebar = (props) => {
           </li>
         ))}
       </ul>
-      {/* <Animated
-      animationIn="tada"
-      animationOut="lightSpeedOut"
-      isVisible={(currentPlayer === 2)}>
-        hello
-    </Animated> */}
     </aside>
   );
 };

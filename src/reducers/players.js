@@ -1,7 +1,6 @@
 import { ADD_POINT, SET_PLAYER_NAME } from '../constants';
 
-const initialState = { 1: { id: 1, name: 'Player 1', points: 0 }, 2: { id: 2, name: 'Player 2', points: 0 }, 3: { id: 3, name: 'Player 3', points: 0 } };
-
+const initialState = { 1: { id: 1, name: 'Player 1', points: 0 }, 2: { id: 2, name: 'Player 2', points: 0 } };
 
 export default (state = initialState, action) => {
   switch (action.type) {
