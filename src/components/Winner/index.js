@@ -2,6 +2,7 @@
 import React from 'react';
 import { Animated } from 'react-animated-css';
 import './winner.scss';
+import { playAudio } from '../../helpers';
 
 const Winner = (props) => {
   const { player, visible } = props;
@@ -10,7 +11,7 @@ const Winner = (props) => {
   const winner = tie ? 'Draw!' : `${player.name} Wins`;
   const points = tie ? '' : `with ${player.points} points`;
   if (visible) {
-    audio.play();
+    playAudio(audio);
   }
   return (
     <div className={visible ? 'visible' : 'invisible'}>

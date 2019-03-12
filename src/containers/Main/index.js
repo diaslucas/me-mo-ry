@@ -3,7 +3,7 @@ import './main.scss';
 import Card from '../../components/Card';
 import store from '../../store';
 import { flipCard, setLastCardFlipped, addPoint } from '../../actions';
-import { unflipCards, changeCurrentPlayer } from '../../helpers';
+import { unflipCards, changeCurrentPlayer, playAudio } from '../../helpers';
 
 const Main = ({ cards }) => {
   const audioSuccess = new Audio('src/sounds/coin.wav');
@@ -23,9 +23,9 @@ const Main = ({ cards }) => {
       } else {
         if (lastCardFlipped.card.name === name) {
           store.dispatch(addPoint(currentPlayer));
-          audioSuccess.play();
+          playAudio(audioSuccess);
         } else {
-          audioFail.play();
+          playAudio(audioFail);
           setTimeout(() => {
             unflipCards(store, index, lastCardFlipped);
             changeCurrentPlayer(store);
