@@ -3,6 +3,7 @@
 
 import _ from 'lodash';
 import { flipCard, setCurrentPlayer } from '../actions';
+import store from '../store';
 
 export function unflipCards(store, currentCardIndex, lastCardFlipped) {
   store.dispatch(flipCard(currentCardIndex));
@@ -44,4 +45,12 @@ export function getWinner(players) {
     }
   });
   return winner;
+}
+
+export function playAudio(audio) {
+  const state = store.getState();
+  const { game } = state;
+  if (game.isSoundOn) {
+    audio.play();
+  }
 }
