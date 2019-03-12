@@ -2,9 +2,12 @@ import React from 'react';
 import './playersSidebar.scss';
 import PlayerInput from '../../components/PlayerInput';
 import store from '../../store';
-import { setPlayerName } from '../../actions';
+import { setPlayerName, toggleSound } from '../../actions';
+import SoundButton from '../../components/SoundButton';
 
 const PlayersSidebar = (props) => {
+  const state = store.getState();
+  const { game } = state;
   const { players, currentPlayer } = props;
   const activeStyleLi = {
     background: '#a4c7e0',
@@ -17,6 +20,10 @@ const PlayersSidebar = (props) => {
   const handleNameChange = (e, playerId) => {
     const { value } = e.target;
     store.dispatch(setPlayerName(playerId, value));
+  };
+
+  const handleToggleSound = () => {
+    store.dispatch(toggleSound());
   };
 
   return (
@@ -37,6 +44,7 @@ const PlayersSidebar = (props) => {
           </li>
         ))}
       </ul>
+      <SoundButton isOn={game.isSoundOn} onClick={() => handleToggleSound()} />
     </aside>
   );
 };
