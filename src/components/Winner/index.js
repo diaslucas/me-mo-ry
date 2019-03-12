@@ -5,7 +5,10 @@ import './winner.scss';
 
 const Winner = (props) => {
   const { player, visible } = props;
-  const audio = new Audio('src/tada.wav');
+  const tie = player === null;
+  const audio = new Audio('src/sounds/course_clear.wav');
+  const winner = tie ? 'Draw!' : `${player.name} Wins`;
+  const points = tie ? '' : `with ${player.points} points`;
   if (visible) {
     audio.play();
   }
@@ -13,10 +16,10 @@ const Winner = (props) => {
     <div className={visible ? 'visible' : 'invisible'}>
       <Animated className="winner" animationIn="tada" animationOut="slideOutRight" isVisible={visible}>
         <Animated animationIn="slideInRight" animationOut="slideOutRight" isVisible={visible}>
-          {player.name} Wins <br />
+          {winner} <br />
         </Animated>
         <Animated animationIn="slideInLeft" animationOut="slideOutLeft" isVisible={visible}>
-          with {player.points} points
+          {points}
         </Animated>
       </Animated>
     </div>
