@@ -6,6 +6,9 @@ import { flipCard, setLastCardFlipped, addPoint } from '../../actions';
 import { unflipCards, changeCurrentPlayer } from '../../helpers';
 
 const Main = ({ cards }) => {
+  const audioSuccess = new Audio('src/sounds/coin.wav');
+  const audioFail = new Audio('src/sounds/yoshi_swallow.wav');
+
   const handleClick = (card, index) => {
     const state = store.getState();
     const { game } = state;
@@ -20,11 +23,13 @@ const Main = ({ cards }) => {
       } else {
         if (lastCardFlipped.card.name === name) {
           store.dispatch(addPoint(currentPlayer));
+          audioSuccess.play();
         } else {
+          audioFail.play();
           setTimeout(() => {
             unflipCards(store, index, lastCardFlipped);
             changeCurrentPlayer(store);
-          }, 1000);
+          }, 800);
         }
 
         store.dispatch(setLastCardFlipped(null, null));
