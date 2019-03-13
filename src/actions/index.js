@@ -1,4 +1,6 @@
-import { FLIP_CARD, SET_CURRENT_PLAYER, SET_LAST_CARD_FLIPPED, ADD_POINT, SET_PLAYER_NAME, TOGGLE_SOUND } from '../constants';
+import {
+  FLIP_CARD, SET_CURRENT_PLAYER, SET_LAST_CARD_FLIPPED, ADD_POINT,
+  SET_PLAYER_NAME, TOGGLE_SOUND, RESET_GAME } from '../constants';
 
 export const flipCard = index => ({
   type: FLIP_CARD,
@@ -20,13 +22,15 @@ export const addPoint = playerId => ({
   payload: playerId,
 });
 
-
 export const setPlayerName = (playerId, name) => ({
   type: SET_PLAYER_NAME,
   payload: { playerId, name },
 });
 
-
 export const toggleSound = () => ({
   type: TOGGLE_SOUND,
+});
+
+export const resetGame = () => ({
+  type: RESET_GAME,
 });
