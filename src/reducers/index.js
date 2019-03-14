@@ -3,8 +3,10 @@ import cards from './cards';
 import game from './game';
 import players from './players';
 
-export default combineReducers({
+const appReducer = combineReducers({
   cards,
   players,
   game,
 });
+
+export default appReducer;

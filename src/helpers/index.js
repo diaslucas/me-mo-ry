@@ -2,7 +2,7 @@
 /* eslint-disable prefer-destructuring */
 
 import _ from 'lodash';
-import { flipCard, setCurrentPlayer } from '../actions';
+import { flipCard, setCurrentPlayer, resetGame } from '../actions';
 import store from '../store';
 
 export function unflipCards(store, currentCardIndex, lastCardFlipped) {
@@ -53,4 +53,8 @@ export function playAudio(audio) {
   if (game.isSoundOn) {
     audio.play();
   }
+}
+
+export function playAgain() {
+  store.dispatch(resetGame());
 }

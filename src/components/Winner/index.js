@@ -2,7 +2,7 @@
 import React from 'react';
 import { Animated } from 'react-animated-css';
 import './winner.scss';
-import { playAudio } from '../../helpers';
+import { playAudio, playAgain } from '../../helpers';
 
 const Winner = (props) => {
   const { player, visible } = props;
@@ -13,14 +13,18 @@ const Winner = (props) => {
   if (visible) {
     playAudio(audio);
   }
+
   return (
-    <div className={visible ? 'visible' : 'invisible'}>
+    <div className={visible ? 'd-block' : 'd-none'}>
       <Animated className="winner" animationIn="tada" animationOut="slideOutRight" isVisible={visible}>
         <Animated animationIn="slideInRight" animationOut="slideOutRight" isVisible={visible}>
           {winner} <br />
         </Animated>
         <Animated animationIn="slideInLeft" animationOut="slideOutLeft" isVisible={visible}>
           {points}
+        </Animated>
+        <Animated animationIn="slideInUp" animationOut="slideOutDown" isVisible={visible}>
+          <button type="button" className="btn btn-outline-info" onClick={() => playAgain()}>Play Again</button>
         </Animated>
       </Animated>
     </div>

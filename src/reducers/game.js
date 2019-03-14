@@ -1,4 +1,4 @@
-import { SET_LAST_CARD_FLIPPED, SET_CURRENT_PLAYER, ADD_POINT, TOGGLE_SOUND } from '../constants';
+import { SET_LAST_CARD_FLIPPED, SET_CURRENT_PLAYER, ADD_POINT, TOGGLE_SOUND, RESET_GAME } from '../constants';
 import { numberOfPairs } from '../cardList';
 
 const initialState = {
@@ -42,6 +42,10 @@ export default (state = initialState, action) => {
         ...state,
         isSoundOn,
       };
+    }
+
+    case RESET_GAME: {
+      return initialState;
     }
 
     default:
