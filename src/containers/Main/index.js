@@ -4,10 +4,12 @@ import Card from '../../components/Card';
 import store from '../../store';
 import { flipCard, setLastCardFlipped, addPoint } from '../../actions';
 import { unflipCards, changeCurrentPlayer, playAudio } from '../../helpers';
+import coinSound from '../../sounds/coin.wav';
+import yoshiSwallowSound from '../../sounds/yoshi_swallow.wav';
 
 const Main = ({ cards }) => {
-  const audioSuccess = new Audio('src/sounds/coin.wav');
-  const audioFail = new Audio('src/sounds/yoshi_swallow.wav');
+  const audioSuccess = new Audio(coinSound);
+  const audioFail = new Audio(yoshiSwallowSound);
 
   const handleClick = (card, index) => {
     const state = store.getState();

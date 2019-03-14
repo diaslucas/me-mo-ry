@@ -28,6 +28,15 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(wav|mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
     ],
   },
   plugins: [
