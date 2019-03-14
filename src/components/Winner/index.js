@@ -3,11 +3,12 @@ import React from 'react';
 import { Animated } from 'react-animated-css';
 import './winner.scss';
 import { playAudio, playAgain } from '../../helpers';
+import courseClearSound from '../../sounds/course_clear.wav';
 
 const Winner = (props) => {
   const { player, visible } = props;
   const tie = player === null;
-  const audio = new Audio('src/sounds/course_clear.wav');
+  const audio = new Audio(courseClearSound);
   const winner = tie ? 'Draw!' : `${player.name} Wins`;
   const points = tie ? '' : `with ${player.points} points`;
   if (visible) {
